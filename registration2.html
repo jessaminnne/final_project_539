@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Registration</title>
+  <script src="registration.js"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="css/registration.css">
+</head>
+
+<body id="registration" onload="document.registration.userid.focus();">
+  <div class="reg-header">
+  <!-- <h1 class="logo-word" id="logo">Opis</h1>
+  <h2 class="subheader">Share your talent with others.</h2> -->
+</div>
+
+<form id="reg-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<div class="reg-block">
+    <h1>Opis</h1>
+    <h2 class="sub-header">Share your talent with others</h2>
+
+    <label>Username</label>
+    <input type="text" id="name" name="name" placeholder="Choose a Username" required>
+    <span class="error">* <?php echo $nameErr;?></span>
+    <br><br>
+
+    <label>Email address:</label>
+    <input type="text" id="email_addr" name="email_addr" placeholder="Enter your Email" required>
+    <span class="error">* <?php echo $email_addrErr;?></span>
+    <br><br>
+
+    <label>Confirm email address:</label>
+    <input type="text" id="email_addr_repeat" name="email_addr_repeat" placeholder="Confirm email address" required oninput="check(this)">
+    <span class="error">* <?php echo $email_addr_repeatErr;?></span>
+    <br><br>
+
+    <label>Create a password:</label>
+    <input type="password" id="password" name="password" placeholder="Create a Password" required>
+    <span class="error">* <?php echo $passwordErr;?></span>
+    <br><br>
+
+    <label>Confirm password:</label>
+    <input type="password" id="password" name="password_repeat" placeholder="Confirm Password" required oninput="check(this)">
+    <span class="error">* <?php echo $password_repeatErr;?></span>
+    <br><br>
+
+    <input type="submit" name="submit" value="Submit">
+</div>
+  </form>
+
+<footer>
+  <p>Copyright &nbsp; &copy; &nbsp; Colin Chen &nbsp; &amp; &nbsp; Jessamine Bartley-Matthews
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- <script src="js/bootstrap.min.js"></script> -->
+
+<!-- <script>
+function check(input){
+  if (input.value !=document.getElementById('email_addr').value){
+    input.className="error";
+    alert("Must match!");
+  }
+} </script> -->
+
+</body>
+
+</html>
